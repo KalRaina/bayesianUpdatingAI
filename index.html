@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Sums Game vs. AI</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+
+</head>
+
+<body>
+
+<div class="game-container">
+
+<h1>Sums Game vs. AI</h1>
+
+<div class="instructions">
+
+<h2>How to Play</h2>
+
+<p>
+Choose a number from 1-5.
+The AI picks a number too.
+If the sum is even, you win.
+If it's odd, the AI wins.
+<br><br>
+The AI has two modes, adaptive and random.
+Random mode is easier to beat more often as the AI just guesses.
+Adaptive mode uses simple Bayesian updating to learn your habits and counter you.
+<br><br>
+Change modes by clicking the green button.
+<br><br>
+The bottom-right visualiser shows the AI's probability nodes changing in real time.
+Reload the page to reset the AI.
+</p>
+
+<button id="aiToggle">AI: Adaptive</button>
+
+</div>
+
+<div class="input-area">
+
+   <input type="number" id="userInput" min="1" max="5" placeholder="Enter a number (1-5): ">
+
+</div>
+
+<div class="output">
+    <p id="resultText">
+    </p>
+</div>
+
+
+</div>
+
+<div class="statBox">
+    <h3> Stats</h3>
+
+    <p id="wins">Wins: 0</p>
+    <p id="losses">Losses: 0</p>
+    <p id="winrate">Win Rate: 0%</p>
+</div>
+
+<div class="bottomLayout">
+
+<canvas id="scoreChart" width="400" height="200"></canvas>
+
+<div class="visualiserBox">
+
+
+<div id="aiBrain">
+
+<div class="node" id="node1">1</div>
+<div class="node" id="node2">2</div>
+<div class="node" id="node3">3</div>
+<div class="node" id="node4">4</div>
+<div class="node" id="node5">5</div>
+
+</div>
+
+
+</div>
+
+</div>
+    
+<script src="main.js"></script>
+
+</body>
+
+</html>
